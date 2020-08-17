@@ -2,10 +2,31 @@
 
 ######################################################
 #						     
-#	Script to change internal pdf pagination		                            			                             
-#	using python script from https://github.com/lovasoa/pagelabels-py                       	                             
+#	Script to change internal pdf pagination		   
+#
+# requirement: https://github.com/lovasoa/pagelabels-py must be installed in ~/bin 
+# (adapt script if necessary)
+# 
 #			                             
 ######################################################
+
+# Checking if file is a pdf file
+
+mtype=$(file --mime-type -b "$1")
+
+if ! echo $mtype | grep -q pdf ; then
+	echo "The provided file is not a pdf. Script is aborted."
+	exit 0
+fi
+
+# Checking if python script is installed
+
+if [ ! -d "~/bin/pagelabels-py" ]; then
+  echo "Script "pagelabels-py" by lovasoa is not installed (https://github.com/lovasoa/pagelabels-py). Script is aborted." 
+  exit 0
+fi
+
+# running actual script
 
 repeat=y
 
