@@ -1,6 +1,8 @@
 # pag-pdf
 Bash skript to facilitate changing internal pagination of pdf-file.
 
-It is dependendent on pagelabels-py (https://github.com/lovasoa/pagelabels-py) and adds a text based user interface.
+Based on and requires pagelabels-py (https://github.com/lovasoa/pagelabels-py).
 
-It should be especially helpful with scanned books.
+Provides a text based user interface and should be especially helpful with scanned books.
+
+Usage: pag-pdf file.pdf
